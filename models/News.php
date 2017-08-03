@@ -27,8 +27,8 @@ class News {
         $page = $_SERVER['REQUEST_URI']; //getting uri
         $getPage = explode("/", $page); // dividing by "/"
         $pageNum = $getPage[3]; //looking for number
-        if($pageNum == 1) { $pageNum = 0; } //if we look for first page, $offset = 0
-        $offset = $pageNum * 5; //if not, getting news for asked page
+        //if($pageNum == 1) { $offset = 0; } //if we look for first page, $offset = 0
+        $offset = ($pageNum-1) * 5; //if not, getting news for asked page
 
         $newsList = array();
 
